@@ -5,6 +5,7 @@ import 'package:flutteruitest/screen/func/bmi_page.dart';
 import 'package:flutteruitest/screen/bottom_navi_page.dart';
 import 'package:flutteruitest/screen/infinite_list.dart';
 import 'package:flutteruitest/screen/list_in_list.dart';
+import 'package:flutteruitest/screen/my_custom_form.dart';
 import 'package:flutteruitest/screen/nest_tab_page.dart';
 import 'package:flutteruitest/screen/func/stop_watch.dart';
 
@@ -56,8 +57,11 @@ class _MainPageState extends State<MainPage> {
               ),
             ),
             ListTile(
-              title: Text('Item 1'),
-              onTap: () => Navigator.pop(context),
+              title: Text('입력폼 샘플'),
+              onTap: () async {
+                await Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) { return MyCustomFormPage(); }));
+                Navigator.pop(context);
+              },
             ),
             ListTile(
               title: Text('Item 2'),
