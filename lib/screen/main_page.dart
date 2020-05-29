@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutteruitest/model/list_model.dart';
-import 'package:flutteruitest/screen/bmi_page.dart';
+import 'package:flutteruitest/screen/bloc/simple_counter.dart';
+import 'package:flutteruitest/screen/func/bmi_page.dart';
 import 'package:flutteruitest/screen/bottom_navi_page.dart';
 import 'package:flutteruitest/screen/infinite_list.dart';
 import 'package:flutteruitest/screen/list_in_list.dart';
 import 'package:flutteruitest/screen/nest_tab_page.dart';
-import 'package:flutteruitest/screen/stop_watch.dart';
+import 'package:flutteruitest/screen/func/stop_watch.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -201,6 +202,26 @@ class _MainPageState extends State<MainPage> {
                         ],
                       ),
                       color: Colors.green,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                    ),
+
+                    RaisedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                SimpleCounter()));
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.border_bottom, color: Colors.white60,),
+                          SizedBox(width: 10,),
+                          Text('Simple Counter', style: TextStyle(color: Colors.white60,),),
+                        ],
+                      ),
+                      color: Colors.purple,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
