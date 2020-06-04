@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutteruitest/provider/auth_model.dart';
 import 'package:flutteruitest/provider/counter.dart';
 import 'package:flutteruitest/screen/main_page.dart';
 import 'package:provider/provider.dart';
@@ -20,6 +21,9 @@ void main() {
     providers: <SingleChildWidget>[
       ChangeNotifierProvider(
         create: (BuildContext context) => Counter(),
+      ),
+      ChangeNotifierProvider(
+        create: (BuildContext context) => AuthModel(),
       ),
     ],
     child: MyApp(),

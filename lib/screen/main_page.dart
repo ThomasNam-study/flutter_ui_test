@@ -10,6 +10,8 @@ import 'package:flutteruitest/screen/my_custom_form.dart';
 import 'package:flutteruitest/screen/nest_tab_page.dart';
 import 'package:flutteruitest/screen/func/stop_watch.dart';
 
+import 'login/login_root_page.dart';
+
 class MainPage extends StatefulWidget {
   @override
   _MainPageState createState() => _MainPageState();
@@ -72,8 +74,11 @@ class _MainPageState extends State<MainPage> {
               },
             ),
             ListTile(
-              title: Text('Item 3'),
-              onTap: () => Navigator.pop(context),
+              title: Text('Login Provider Test'),
+              onTap: () async {
+                await Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) { return LoginRootPage(); }));
+                Navigator.pop(context);
+              },
             ),
           ],
         ),
