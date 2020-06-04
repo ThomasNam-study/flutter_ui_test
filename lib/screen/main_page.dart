@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutteruitest/model/list_model.dart';
 import 'package:flutteruitest/screen/bloc/simple_counter.dart';
+import 'package:flutteruitest/screen/counter_v2_page.dart';
 import 'package:flutteruitest/screen/func/bmi_page.dart';
 import 'package:flutteruitest/screen/bottom_navi_page.dart';
 import 'package:flutteruitest/screen/infinite_list.dart';
@@ -64,8 +65,11 @@ class _MainPageState extends State<MainPage> {
               },
             ),
             ListTile(
-              title: Text('Item 2'),
-              onTap: () => Navigator.pop(context),
+              title: Text('Counter V2'),
+              onTap: () async {
+                await Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) { return CounterV2Page(); }));
+                Navigator.pop(context);
+              },
             ),
             ListTile(
               title: Text('Item 3'),

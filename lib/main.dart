@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutteruitest/provider/counter.dart';
 import 'package:flutteruitest/screen/main_page.dart';
+import 'package:provider/provider.dart';
+import 'package:provider/single_child_widget.dart';
 
 class SimpleBlocDelegate extends BlocDelegate {
   @override
@@ -13,7 +16,14 @@ class SimpleBlocDelegate extends BlocDelegate {
 void main() {
   // BlocSupervisor.delegate = SimpleBlocDelegate();
 
-  runApp(MyApp());
+  runApp(MultiProvider(
+    providers: <SingleChildWidget>[
+      ChangeNotifierProvider(
+        create: (BuildContext context) => Counter(),
+      ),
+    ],
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
