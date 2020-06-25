@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutteruitest/model/list_model.dart';
 import 'package:flutteruitest/screen/bloc/simple_counter.dart';
+import 'package:flutteruitest/screen/chat/my_chat_page.dart';
 import 'package:flutteruitest/screen/counter_v2_page.dart';
 import 'package:flutteruitest/screen/dice_page.dart';
 import 'package:flutteruitest/screen/func/bmi_page.dart';
@@ -398,6 +399,17 @@ class _MainPageState extends State<MainPage> {
                 MaterialPageRoute(builder: (BuildContext context) {
               return LoginRootPage();
             }));
+            Navigator.pop(context);
+          },
+        ),
+
+        ListTile(
+          title: Text('My Chat'),
+          onTap: () async {
+            await Navigator.push(context,
+                MaterialPageRoute(builder: (BuildContext context) {
+                  return MyChatPage();
+                }));
             Navigator.pop(context);
           },
         ),
