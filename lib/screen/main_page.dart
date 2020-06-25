@@ -9,6 +9,8 @@ import 'package:flutteruitest/screen/list_in_list.dart';
 import 'package:flutteruitest/screen/my_custom_form.dart';
 import 'package:flutteruitest/screen/nest_tab_page.dart';
 import 'package:flutteruitest/screen/func/stop_watch.dart';
+import 'package:flutteruitest/screen/new_page.dart';
+import 'package:flutteruitest/screen/refresh_pull_page.dart';
 
 import 'login/login_root_page.dart';
 
@@ -18,7 +20,6 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-
   List<ListModel> listModels = [
     ListModel(title: '타이틀1'),
     ListModel(title: '타이틀2'),
@@ -45,7 +46,6 @@ class _MainPageState extends State<MainPage> {
                       color: Colors.white70,
                     ),
                   ),
-
                   Text(
                     'Sub title!!!',
                     style: TextStyle(
@@ -62,21 +62,30 @@ class _MainPageState extends State<MainPage> {
             ListTile(
               title: Text('입력폼 샘플'),
               onTap: () async {
-                await Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) { return MyCustomFormPage(); }));
+                await Navigator.push(context,
+                    MaterialPageRoute(builder: (BuildContext context) {
+                  return MyCustomFormPage();
+                }));
                 Navigator.pop(context);
               },
             ),
             ListTile(
               title: Text('Counter V2'),
               onTap: () async {
-                await Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) { return CounterV2Page(); }));
+                await Navigator.push(context,
+                    MaterialPageRoute(builder: (BuildContext context) {
+                  return CounterV2Page();
+                }));
                 Navigator.pop(context);
               },
             ),
             ListTile(
               title: Text('Login Provider Test'),
               onTap: () async {
-                await Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) { return LoginRootPage(); }));
+                await Navigator.push(context,
+                    MaterialPageRoute(builder: (BuildContext context) {
+                  return LoginRootPage();
+                }));
                 Navigator.pop(context);
               },
             ),
@@ -105,7 +114,6 @@ class _MainPageState extends State<MainPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text('메인 화면'),
-
                     RaisedButton(
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
@@ -119,7 +127,6 @@ class _MainPageState extends State<MainPage> {
                         ],
                       ),
                     ),
-
                     RaisedButton(
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
@@ -129,9 +136,19 @@ class _MainPageState extends State<MainPage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Icon(Icons.tab, color: Colors.white60,),
-                          SizedBox(width: 10,),
-                          Text('서브탭', style: TextStyle(color: Colors.white60,),),
+                          Icon(
+                            Icons.tab,
+                            color: Colors.white60,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            '서브탭',
+                            style: TextStyle(
+                              color: Colors.white60,
+                            ),
+                          ),
                         ],
                       ),
                       color: Colors.deepPurple,
@@ -139,7 +156,6 @@ class _MainPageState extends State<MainPage> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                     ),
-
                     RaisedButton(
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
@@ -149,9 +165,19 @@ class _MainPageState extends State<MainPage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Icon(Icons.stop, color: Colors.white60,),
-                          SizedBox(width: 10,),
-                          Text('스톱워치', style: TextStyle(color: Colors.white60,),),
+                          Icon(
+                            Icons.stop,
+                            color: Colors.white60,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            '스톱워치',
+                            style: TextStyle(
+                              color: Colors.white60,
+                            ),
+                          ),
                         ],
                       ),
                       color: Colors.indigo,
@@ -159,19 +185,29 @@ class _MainPageState extends State<MainPage> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                     ),
-
                     RaisedButton(
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                                ListInListPage(lists: listModels,)));
+                            builder: (BuildContext context) => ListInListPage(
+                                  lists: listModels,
+                                )));
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Icon(Icons.stop, color: Colors.white60,),
-                          SizedBox(width: 10,),
-                          Text('List in List', style: TextStyle(color: Colors.white60,),),
+                          Icon(
+                            Icons.stop,
+                            color: Colors.white60,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            'List in List',
+                            style: TextStyle(
+                              color: Colors.white60,
+                            ),
+                          ),
                         ],
                       ),
                       color: Colors.lime,
@@ -179,19 +215,27 @@ class _MainPageState extends State<MainPage> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                     ),
-
                     RaisedButton(
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                                BmiMain()));
+                            builder: (BuildContext context) => BmiMain()));
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Icon(Icons.stop, color: Colors.white60,),
-                          SizedBox(width: 10,),
-                          Text('BMI', style: TextStyle(color: Colors.white60,),),
+                          Icon(
+                            Icons.stop,
+                            color: Colors.white60,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            'BMI',
+                            style: TextStyle(
+                              color: Colors.white60,
+                            ),
+                          ),
                         ],
                       ),
                       color: Colors.orangeAccent,
@@ -199,7 +243,6 @@ class _MainPageState extends State<MainPage> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                     ),
-
                     RaisedButton(
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
@@ -209,9 +252,19 @@ class _MainPageState extends State<MainPage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Icon(Icons.border_bottom, color: Colors.white60,),
-                          SizedBox(width: 10,),
-                          Text('Bottom Navigation', style: TextStyle(color: Colors.white60,),),
+                          Icon(
+                            Icons.border_bottom,
+                            color: Colors.white60,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            'Bottom Navigation',
+                            style: TextStyle(
+                              color: Colors.white60,
+                            ),
+                          ),
                         ],
                       ),
                       color: Colors.green,
@@ -219,7 +272,6 @@ class _MainPageState extends State<MainPage> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                     ),
-
                     RaisedButton(
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
@@ -229,9 +281,19 @@ class _MainPageState extends State<MainPage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Icon(Icons.border_bottom, color: Colors.white60,),
-                          SizedBox(width: 10,),
-                          Text('Simple Counter', style: TextStyle(color: Colors.white60,),),
+                          Icon(
+                            Icons.border_bottom,
+                            color: Colors.white60,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            'Simple Counter',
+                            style: TextStyle(
+                              color: Colors.white60,
+                            ),
+                          ),
                         ],
                       ),
                       color: Colors.purple,
@@ -239,7 +301,33 @@ class _MainPageState extends State<MainPage> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                     ),
+                    FlatButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (BuildContext context) => NewPage()));
+                      },
+                      color: Colors.yellow,
+                      child: Text(
+                        '추가 UI',
+                        style: TextStyle(color: Colors.red),
+                      ),
+                    ),
 
+                    FlatButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (BuildContext context) => RefreshPullPage()));
+                      },
+                      color: Colors.yellow,
+                      child: Text(
+                        'Pull to Refresh',
+                        style: TextStyle(color: Colors.red),
+                      ),
+                    ),
                   ],
                 ),
               ),
