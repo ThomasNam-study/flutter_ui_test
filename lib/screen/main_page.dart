@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutteruitest/model/list_model.dart';
+import 'package:flutteruitest/screen/ani2_test.dart';
+import 'package:flutteruitest/screen/ani_test.dart';
 import 'package:flutteruitest/screen/bloc/simple_counter.dart';
 import 'package:flutteruitest/screen/chat/my_chat_page.dart';
 import 'package:flutteruitest/screen/counter_v2_page.dart';
@@ -328,12 +330,49 @@ class _MainPageState extends State<MainPage> {
                           },
                           color: Colors.yellow,
                           child: Text(
-                            'Dice page',
+                            'Dice',
                             style: TextStyle(color: Colors.red),
                           ),
                         ),
+                        SizedBox(width: 10,),
+
+
                       ],
                     ),
+
+                    Row(children: <Widget>[
+                      FlatButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      AniPage()));
+                        },
+                        color: Colors.yellow,
+                        child: Text(
+                          'Ani',
+                          style: TextStyle(color: Colors.red),
+                        ),
+                      ),
+
+                      SizedBox(width: 10,),
+
+                      FlatButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      Ani2Test()));
+                        },
+                        color: Colors.yellow,
+                        child: Text(
+                          'Ani2',
+                          style: TextStyle(color: Colors.red),
+                        ),
+                      ),
+                    ],)
                   ],
                 ),
               ),
