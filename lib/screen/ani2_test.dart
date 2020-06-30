@@ -14,6 +14,7 @@ class _Ani2TestState extends State<Ani2Test> {
     return Scaffold(
         appBar: AppBar(),
         body: Container(
+          color: Colors.grey,
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
