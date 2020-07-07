@@ -15,6 +15,7 @@ import 'package:flutteruitest/screen/nest_tab_page.dart';
 import 'package:flutteruitest/screen/func/stop_watch.dart';
 import 'package:flutteruitest/screen/new_page.dart';
 import 'package:flutteruitest/screen/refresh_pull_page.dart';
+import 'package:flutteruitest/screen/widget/prog_test.dart';
 
 import 'login/login_root_page.dart';
 
@@ -370,6 +371,23 @@ class _MainPageState extends State<MainPage> {
                         child: Text(
                           'Ani2',
                           style: TextStyle(color: Colors.red),
+                        ),
+                      ),
+
+                      SizedBox(width: 10,),
+
+                      FlatButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      ProgressTest()));
+                        },
+                        color: Colors.redAccent,
+                        child: Text(
+                          'Progress',
+                          style: TextStyle(color: Colors.white),
                         ),
                       ),
                     ],)
